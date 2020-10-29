@@ -1,4 +1,4 @@
-package org.firstinspires.ftc.teamcode;
+package org.firstinspires.ftc.teamcode.samples;
 
 import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.hardware.ColorSensor;
@@ -27,7 +27,6 @@ import virtual_robot.util.AngleUtils;
  * Disabling for now; it was designed to work with Rover Ruckus field
  *
  */
-@Disabled
 @Autonomous(name = "mechbot auto demo", group = "Mechanum")
 public class MechBotAutoDemo extends LinearOpMode {
 
