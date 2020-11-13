@@ -84,7 +84,7 @@ public class BBTCUltimateGoalBot extends VirtualBot {
         hardwareMap = new HardwareMap();
 
         // Add the locomotive motors
-        motorType = MotorType.Neverest40;
+        motorType = MotorType.NeverestOrbital20;
         String[] motorNames = new String[] {"backLeft", "frontLeft", "frontRight", "backRight"};
         for (String name: motorNames) hardwareMap.put(name, new DcMotorExImpl(motorType));
 
