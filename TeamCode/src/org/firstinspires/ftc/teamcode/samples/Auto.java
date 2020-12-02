@@ -7,7 +7,7 @@ import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-@Autonomous(name = "Auto", group = "Mechanum")
+@Autonomous(name = "Auto")
 public class Auto extends LinearOpMode {
 
     DcMotor frontLeft,backLeft,frontRight,backRight;
@@ -27,23 +27,18 @@ public class Auto extends LinearOpMode {
         frontRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
         backRight.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
-        double distance = 180;
-        backLeft.setTargetPosition((int) (distance * TICKS_PER_CM)); //ticks
-        frontLeft.setTargetPosition((int) (distance * TICKS_PER_CM));
-        frontRight.setTargetPosition((int) (-distance * TICKS_PER_CM));
-        backRight.setTargetPosition((int) (-distance * TICKS_PER_CM));
 
+        setEncoder(180);
 
 
         waitForStart();
         ElapsedTime t = new ElapsedTime();
-        frontLeft.setPower(1);
-        backLeft.setPower(1);
-        frontRight.setPower(1);
-        backRight.setPower(1);
 
-        while (opModeIsActive())  {
-            setFront(1);
+        setBack(1);
+
+        while (opModeIsActive());
+        {
+            setBack(1);
             telemetry.addData("Time", t.seconds());
             telemetry.addData("encoder-bck-left", backLeft.getCurrentPosition() + "  busy=" + backLeft.isBusy());
             telemetry.addData("encoder-bck-right", backRight.getCurrentPosition() + "  busy=" + backRight.isBusy());
@@ -60,6 +55,13 @@ public class Auto extends LinearOpMode {
         resetStartTime();
 
     }
+    public void setEncoder(double distance) {
+        backLeft.setTargetPosition((int) (distance * TICKS_PER_CM)); //ticks
+        frontLeft.setTargetPosition((int) (distance * TICKS_PER_CM));
+        frontRight.setTargetPosition((int) (-distance * TICKS_PER_CM));
+        backRight.setTargetPosition((int) (-distance * TICKS_PER_CM));
+    }
+
     public void setFront(double Front) {
         frontLeft.setPower(-Front);
         backLeft.setPower(-Front);
