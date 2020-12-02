@@ -2,3 +2,7 @@ out/
 *.class
 .idea/vcs.xml
 .idea/workspace.xml
+.idea/Codestyles
+
+# Adding misc to ignore, since we all name the JDK differently
+.idea/misc.xml
