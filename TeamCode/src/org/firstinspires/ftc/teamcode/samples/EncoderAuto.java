@@ -13,8 +13,8 @@ public class EncoderAuto extends LinearOpMode {
     DcMotor frontLeft,backLeft,frontRight,backRight;
     ElapsedTime t;
     public static double TICKS_PER_CM = 17.1;// 17.112 tics/cm traveled
-    //Ticks per revoltion = 537.6
-    //wheel size is 100mm and circumfrence ~31.415 cm
+    //Ticks per revolution = 537.6
+    //wheel size is 100mm and circumference ~31.415 cm
 
     public void runOpMode() {
         backLeft = hardwareMap.dcMotor.get("backLeft");
