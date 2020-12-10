@@ -27,6 +27,7 @@ import virtual_robot.util.AngleUtils;
  * Disabling for now; it was designed to work with Rover Ruckus field
  *
  */
+@Disabled
 @Autonomous(name = "IDK", group = "Mechanum")
 public class AutoTester extends LinearOpMode {
 
