@@ -110,7 +110,7 @@ public class BBTCUltimateGoalBot extends VirtualBot {
         for (int i = 0; i < 4; i++) {
             deltaPos[i] = motors[i].update(millis);
             w[i] = deltaPos[i] * wheelCircumference / motorType.TICKS_PER_ROTATION;
-            if (i < 2) w[i] = -w[i];
+            //if (i < 2) w[i] = -w[i];
         }
 
         double[] robotDeltaPos = new double[] {0,0,0,0};
