@@ -17,7 +17,7 @@ import virtual_robot.util.AngleUtils;
  * <p>
  * MechanumBot is the controller class for the "mechanum_bot.fxml" markup file.
  */
-@BotConfig(name = "Mechanum Bot", filename = "mechanum_bot")
+@BotConfig(name = "Mechanum Bot", filename = "mechanum_bot", disabled = true)
 public class MechanumBot extends MechanumBase {
 
     // backServoArm is instantiated during loading via a fx:id property.

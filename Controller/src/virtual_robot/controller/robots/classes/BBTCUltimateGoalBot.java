@@ -54,7 +54,15 @@ public class BBTCUltimateGoalBot extends VirtualBot {
         };
         servo = (ServoImpl)hardwareMap.servo.get("grabber");
 
-        wheelCircumference = Math.PI * botWidth / 4.5;
+        // Default wheels are 4" diameter.
+        // c = pi*d
+        // d = botWidth * (4" / 18")
+        // botWidth = pixels (for the 18" bot)
+        //wheelCircumference = Math.PI * botWidth * 4.0 / 18.0;
+
+        // But, our wheel is 10cm diameter, not quite 4"
+        wheelCircumference = Math.PI * botWidth * 10.0 / 2.54 / 18.0;
+
         interWheelWidth = botWidth * 8.0 / 9.0;
         interWheelLength = botWidth * 7.0 / 9.0;
         wlAverage = (interWheelLength + interWheelWidth) / 2.0;
@@ -102,7 +110,7 @@ public class BBTCUltimateGoalBot extends VirtualBot {
         for (int i = 0; i < 4; i++) {
             deltaPos[i] = motors[i].update(millis);
             w[i] = deltaPos[i] * wheelCircumference / motorType.TICKS_PER_ROTATION;
-            if (i < 2) w[i] = -w[i];
+            //if (i < 2) w[i] = -w[i];
         }
 
         double[] robotDeltaPos = new double[] {0,0,0,0};

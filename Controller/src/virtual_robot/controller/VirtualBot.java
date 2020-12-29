@@ -70,7 +70,7 @@ public abstract class VirtualBot {
         createHardwareMap();
         this.fieldWidth = fieldPane.getPrefWidth();
         halfFieldWidth = fieldWidth / 2.0;
-        botWidth = fieldWidth / 8.0;
+        botWidth = fieldWidth / 8.0; // 18" : 12'
         halfBotWidth = botWidth / 2.0;
         X_MIN = 2.0 * (Config.X_MIN_FRACTION - 0.5) * halfFieldWidth;
         X_MAX = 2.0 * (Config.X_MAX_FRACTION - 0.5) * halfFieldWidth;
