@@ -27,7 +27,6 @@ import virtual_robot.util.AngleUtils;
  * Disabling for now; it was designed to work with Rover Ruckus field
  *
  */
-@Disabled
 @Autonomous(name = "mechbot auto demo", group = "Mechanum")
 public class MechBotAutoDemo extends LinearOpMode {
 
@@ -97,7 +96,8 @@ public class MechBotAutoDemo extends LinearOpMode {
 
             //Turn 90 degrees.
             setPower(0,0,0.5f);
-            backServo.setPosition(0.333 * (currentHeading - 45.0f)/90.0f);
+            backServo.setPosition(1);
+            //0.333 * (currentHeading - 45.0f)/90.0f
             telemetry.addData("Turning 90 degrees","");
             telemetry.update();
 
